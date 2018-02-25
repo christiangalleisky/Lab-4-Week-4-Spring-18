@@ -19,7 +19,6 @@ public class LazyCtor {
     // only constructor is private
     private LazyCtor(final int id) {
         this.id = id;
-        LazyCtor.instanceCounter++;
     }
 
     public static int getNumOfInstancesAllowed() {
