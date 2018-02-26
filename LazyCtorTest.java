@@ -6,11 +6,11 @@ import static org.junit.Assert.*;
 
 public class LazyCtorTest {
 
-    static final boolean use_cache = false;
+    private static final boolean use_cache = false;
 
     // runs before each textMethod
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         System.out.println("beforeMethod");
         if (use_cache) {
             // make sure instances are cached
@@ -23,12 +23,12 @@ public class LazyCtorTest {
 
     // runs after each textMethod
     @After
-    public void tearDown() throws Exception {
+    public void tearDown() {
         System.out.println("afterMethod");
     }
 
     @Test
-    public void testGetInstance() throws Exception {
+    public void testGetInstance() {
         System.out.println("testGetInstance");
         // make sure, not more than K instances are generated
         for (int i = 0; i < LazyCtor.getNumOfInstancesAllowed(); i++) {
