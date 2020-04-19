@@ -10,6 +10,7 @@ public class LazyCtor {
     static {
         for (int i = 0; i < K; i++) {
             LA[i] = new LazyCtor(i);
+            instanceCounter++;
         }
     }
 
